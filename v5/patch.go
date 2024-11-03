@@ -705,10 +705,16 @@ func (d *partialArray) get(key string, options *ApplyOptions) (*lazyNode, error)
 		return d.self, nil
 	}
 
-	idx, err := strconv.Atoi(key)
-
-	if err != nil {
-		return nil, err
+	var (
+		idx int
+		err error
+	)
+	if key == "-" {
+		idx = len(d.nodes) - 1
+	} else {
+		if idx, err = strconv.Atoi(key); err != nil {
+			return nil, err
+		}
 	}
 
 	if idx < 0 {
