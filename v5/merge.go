@@ -7,7 +7,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/evanphx/json-patch/v5/internal/json"
+	"github.com/thz/json-patch/v5/internal/json"
 )
 
 func merge(cur, patch *lazyNode, mergeMerge bool, options *ApplyOptions) *lazyNode {
