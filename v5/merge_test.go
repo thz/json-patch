@@ -10,7 +10,7 @@ func mergePatch(t *testing.T, doc, patch string) string {
 	out, err := MergePatch([]byte(doc), []byte(patch))
 
 	if err != nil {
-		t.Errorf(fmt.Sprintf("%s: %s", err, patch))
+		t.Errorf("%s: %s", err, patch)
 	}
 
 	return string(out)
@@ -343,7 +343,7 @@ func TestCreateMergePatchObjArray(t *testing.T) {
 
 	// We cannot use "compareJSON", since Equals does not report a difference if the value is null
 	if exp != string(res) {
-		t.Fatalf("Array was not empty, was " + string(res))
+		t.Fatalf("Array was not empty, was %s", string(res))
 	}
 }
 

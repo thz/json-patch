@@ -1,6 +1,6 @@
 module github.com/thz/json-patch/v5
 
-go 1.23
+go 1.26
 
 require github.com/jessevdk/go-flags v1.6.1
 
